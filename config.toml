@@ -46,7 +46,7 @@ text_openai_compatible_model_name = "deepseek-ai/DeepSeek-V3.1"
 text_openai_compatible_base_url = "https://api-inference.modelscope.cn/v1"
 hide_config = true
 vision_gemini_base_url = "https://generativelanguage.googleapis.com/v1beta"
-video_clip_json_path = "D:\\Trae项目\\NarratoAI\\resource\\scripts\\2025-0930-002036.json"
+video_clip_json_path = "002036.json"
 
 [azure]
 speech_key = ""
@@ -87,4 +87,5 @@ enabled = false
 [frames]
 frame_interval_input = 3
 vision_batch_size = 10
+
 
