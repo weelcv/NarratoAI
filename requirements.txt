@@ -31,6 +31,7 @@ tenacity>=9.0.0
 opencv-python>=4.11.0.86
 
 # 如果需要 CUDA 支持，取消注释下面的行
-torch>=2.0.0
-torchvision>=0.15.0
-torchaudio>=2.0.0
+#torch>=2.0.0
+#torchvision>=0.15.0
+
+#torchaudio>=2.0.0
