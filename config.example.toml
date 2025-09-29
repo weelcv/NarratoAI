@@ -1,0 +1,155 @@
+[app]
+    project_version="0.7.2"
+
+    # 模型验证模式配置
+    # true: 严格模式，只允许使用预定义支持列表中的模型（默认）
+    # false: 宽松模式，允许使用任何模型名称，仅记录警告
+    strict_model_validation = true
+
+    # LLM API 超时配置（秒）
+    # 视觉模型基础超时时间
+    llm_vision_timeout = 120
+    # 文本模型基础超时时间（解说文案生成等复杂任务需要更长时间）
+    llm_text_timeout = 180
+    # API 重试次数
+    llm_max_retries = 3
+
+    # 支持视频理解的大模型提供商
+    #   gemini  (谷歌, 需要 VPN)
+    #   siliconflow (硅基流动)
+    #   qwenvl  (通义千问)
+    #   openai_compatible (通用OpenAI兼容接口)
+    vision_llm_provider="gemini"
+
+    ########## Gemini 视觉模型
+    vision_gemini_api_key = ""
+    vision_gemini_model_name = "gemini-2.0-flash-lite"
+
+    ########## QwenVL 视觉模型
+    vision_qwenvl_api_key = ""
+    vision_qwenvl_model_name = "qwen2.5-vl-32b-instruct"
+    vision_qwenvl_base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+    ########## siliconflow 视觉模型
+    vision_siliconflow_api_key = ""
+    vision_siliconflow_model_name = "Qwen/Qwen2.5-VL-32B-Instruct"
+    vision_siliconflow_base_url = "https://api.siliconflow.cn/v1"
+
+    ########## OpenAI 视觉模型
+    vision_openai_api_key = ""
+    vision_openai_model_name = "gpt-4.1-nano-2025-04-14"
+    vision_openai_base_url = "https://api.openai.com/v1"
+
+    ########## 通用OpenAI兼容视觉模型
+    vision_openai_compatible_api_key = ""
+    vision_openai_compatible_model_name = "gpt-4o"
+    vision_openai_compatible_base_url = ""
+
+    ########### NarratoAPI 微调模型 (未发布)
+    narrato_api_key = ""
+    narrato_api_url = ""
+    narrato_model = "narra-1.0-2025-05-09"
+
+    # 用于生成文案的大模型支持的提供商 (Supported providers):
+    #   openai (默认, 需要 VPN)
+    #   siliconflow (硅基流动)
+    #   deepseek (深度求索)
+    #   gemini (谷歌, 需要 VPN)
+    #   qwen (通义千问)
+    #   moonshot (月之暗面)
+    #   openai_compatible (通用OpenAI兼容接口)
+    text_llm_provider="gemini"
+
+    ########## OpenAI API Key
+    # Get your API key at https://platform.openai.com/api-keys
+    text_openai_api_key = ""
+    text_openai_base_url = "https://api.openai.com/v1"
+    text_openai_model_name = "gpt-4.1-mini-2025-04-14"
+
+    # 使用 硅基流动 第三方 API Key，使用手机号注册：https://cloud.siliconflow.cn/i/pyOKqFCV
+    # 访问 https://cloud.siliconflow.cn/account/ak 获取你的 API 密钥
+    text_siliconflow_api_key = ""
+    text_siliconflow_base_url = "https://api.siliconflow.cn/v1"
+    text_siliconflow_model_name = "deepseek-ai/DeepSeek-R1"
+
+    ########## DeepSeek API Key
+    # 访问 https://platform.deepseek.com/api_keys 获取你的 API 密钥
+    text_deepseek_api_key = ""
+    text_deepseek_base_url = "https://api.deepseek.com"
+    text_deepseek_model_name = "deepseek-chat"
+
+    ########## Gemini API Key
+    text_gemini_api_key=""
+    text_gemini_model_name = "gemini-2.0-flash"
+    text_gemini_base_url = "https://generativelanguage.googleapis.com/v1beta"
+
+    ########## Qwen API Key
+    # 访问 https://bailian.console.aliyun.com/?tab=model#/api-key 获取你的 API 密钥
+    text_qwen_api_key = ""
+    text_qwen_model_name = "qwen-plus-1127"
+    text_qwen_base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+    ########## Moonshot API Key
+    # 访问 https://platform.moonshot.cn/console/api-keys 获取你的 API 密钥
+    text_moonshot_api_key=""
+    text_moonshot_base_url = "https://api.moonshot.cn/v1"
+    text_moonshot_model_name = "moonshot-v1-8k"
+
+    ########## 通用OpenAI兼容文本模型
+    text_openai_compatible_api_key = ""
+    text_openai_compatible_model_name = "gpt-4o"
+    text_openai_compatible_base_url = ""
+
+    # webui界面是否显示配置项
+    hide_config = true
+
+[azure]
+    # Azure TTS 配置
+    speech_key = ""
+    speech_region = ""
+
+[tencent]
+    # 腾讯云 TTS 配置
+    # 访问 https://console.cloud.tencent.com/cam/capi 获取你的密钥
+    secret_id = ""
+    secret_key = ""
+    # 地域配置，默认为 ap-beijing
+    region = "ap-beijing"
+
+[soulvoice]
+    # SoulVoice TTS API 密钥
+    api_key = ""
+    # 音色 URI（必需）
+    voice_uri = "speech:mcg3fdnx:clzkyf4vy00e5qr6hywum4u84:bzznlkuhcjzpbosexitr"
+    # API 接口地址（可选，默认值如下）
+    api_url = "https://tts.scsmtech.cn/tts"
+    # 默认模型（可选）
+    model = "FunAudioLLM/CosyVoice2-0.5B"
+
+[ui]
+    # TTS引擎选择 (edge_tts, azure_speech, soulvoice, tencent_tts)
+    tts_engine = "edge_tts"
+
+    # Edge TTS 配置
+    edge_voice_name = "zh-CN-XiaoyiNeural-Female"
+    edge_volume = 80
+    edge_rate = 1.0
+    edge_pitch = 0
+
+    # Azure Speech Services 配置
+    azure_voice_name = "zh-CN-XiaoyiNeural-Female"
+    azure_volume = 80
+    azure_rate = 1.0
+    azure_pitch = 0
+
+[proxy]
+    # clash 默认地址：http://127.0.0.1:7890
+    http = ""
+    https = ""
+    enabled = false
+
+[frames]
+    # 提取关键帧的间隔时间
+    frame_interval_input = 3
+    # 大模型单次处理的关键帧数量
+    vision_batch_size = 10
